@@ -9,13 +9,7 @@ import java.io.FileInputStream;
 import java.util.List;
 import java.util.Properties;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Niraj Singh
- * Date: 3/19/13
- * Time: 10:44 AM
- * To change this template use File | Settings | File Templates.
- */
+
 public class AWSSimpleQueueServiceUtil {
     private BasicAWSCredentials credentials;
     private AmazonSQS sqs;
@@ -41,14 +35,7 @@ public class AWSSimpleQueueServiceUtil {
             this.simpleQueue = "standard";
 
             this.sqs = new AmazonSQSClient(this.credentials);
-            /**
-             * My queue is in singapore region which has following endpoint for sqs
-             * https://sqs.ap-southeast-1.amazonaws.com
-             * you can find your endpoints here
-             * http://docs.aws.amazon.com/general/latest/gr/rande.html
-             *
-             * Overrides the default endpoint for this client ("sqs.us-east-1.amazonaws.com")
-             */
+            
             this.sqs.setEndpoint("https://sqs.ap-south-1.amazonaws.com/988650320779");
             /**
                You can use this in your web app where    AwsCredentials.properties is stored in web-inf/classes
